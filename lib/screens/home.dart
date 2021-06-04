@@ -12,7 +12,6 @@ class Home extends StatefulWidget {
 }
 
 class _HomeState extends State<Home> {
-
   @override
   Widget build(BuildContext context) {
     var a = Provider.of<User>(context);
@@ -41,13 +40,17 @@ class _HomeState extends State<Home> {
                 SizedBox(
                   height: 30.0,
                 ),
-                RaisedButton(
+                ElevatedButton(
                   child: Text("Second Page"),
-                  onPressed: () => Navigator.push(context, MaterialPageRoute(builder: (context) => SecondScreen(),)),
+                  onPressed: () => Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => SecondScreen(),
+                      )),
                   //leads to next screen
                 ),
                 SizedBox(height: 20.0),
-                RaisedButton(
+                ElevatedButton(
                   onPressed: () {
                     a.signOut();
                   },
